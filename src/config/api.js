@@ -6,7 +6,7 @@
 const PRODUCTION_API_URL = "https://widget-backend-1-l4lw.onrender.com";
 
 // LOCAL DEVELOPMENT BACKEND
-const LOCAL_API_URL = "http://localhost:5000";
+// const LOCAL_API_URL = "http://localhost:5000";
 
 // ============================================
 // SELECT ACTIVE BACKEND
