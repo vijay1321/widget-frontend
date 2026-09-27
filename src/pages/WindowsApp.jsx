@@ -1,7 +1,8 @@
 import { Download, Monitor, Zap, Layout } from 'lucide-react';
+import { WINDOWS_DOWNLOAD_URL } from '../config/api';
 
 const WindowsApp = () => {
-    const downloadUrl = import.meta.env.VITE_WINDOWS_DOWNLOAD_URL || '#';
+    const downloadUrl = WINDOWS_DOWNLOAD_URL || '#';
 
     return (
         <div className="max-w-5xl mx-auto px-6 py-16">

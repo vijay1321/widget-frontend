@@ -93,9 +93,7 @@ function App() {
 
 export default App;`,
 
-    '.env': `VITE_WINDOWS_DOWNLOAD_URL=https://example.com/widgetly-setup.exe`,
 
-    '.env.example': `VITE_WINDOWS_DOWNLOAD_URL=https://example.com/widgetly-setup.exe`,
 
     'src/utils/api.js': `import axios from 'axios';
 
