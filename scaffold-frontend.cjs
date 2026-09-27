@@ -93,16 +93,14 @@ function App() {
 
 export default App;`,
 
-    '.env': `VITE_API_BASE_URL=http://localhost:5000/api
-VITE_WINDOWS_DOWNLOAD_URL=https://example.com/widgetly-setup.exe`,
+    '.env': `VITE_WINDOWS_DOWNLOAD_URL=https://example.com/widgetly-setup.exe`,
 
-    '.env.example': `VITE_API_BASE_URL=http://localhost:5000/api
-VITE_WINDOWS_DOWNLOAD_URL=https://example.com/widgetly-setup.exe`,
+    '.env.example': `VITE_WINDOWS_DOWNLOAD_URL=https://example.com/widgetly-setup.exe`,
 
     'src/utils/api.js': `import axios from 'axios';
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api',
+    baseURL: 'http://localhost:5000/api',
 });
 
 api.interceptors.request.use((config) => {

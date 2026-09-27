@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import api from '../utils/api';
+import apiClient from '../config/apiClient';
 import ActiveWidgetCard from '../components/ActiveWidgetCard';
 
 const Dashboard = () => {
@@ -17,7 +17,7 @@ const Dashboard = () => {
 
     const fetchUserWidgets = async () => {
         try {
-            const res = await api.get('/user/widgets');
+            const res = await apiClient.get('/user/widgets');
             setUserWidgets(res.data);
         } catch (error) {
             console.error(error);
@@ -28,7 +28,7 @@ const Dashboard = () => {
 
     const handleDisable = async (widgetId) => {
         try {
-            await api.post(`/widgets/${widgetId}/disable`);
+            await apiClient.post(`/widgets/${widgetId}/disable`);
             fetchUserWidgets(); // Refresh
         } catch (error) {
             console.error(error);

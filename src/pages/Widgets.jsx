@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import api from '../utils/api';
+import apiClient from '../config/apiClient';
 import WidgetCard from '../components/WidgetCard';
 import WidgetPreviewModal from '../components/WidgetPreviewModal';
 import ConfirmationModal from '../components/ConfirmationModal';
@@ -22,11 +22,11 @@ const Widgets = () => {
     useEffect(() => {
         const fetchWidgets = async () => {
             try {
-                const res = await api.get('/widgets');
+                const res = await apiClient.get('/widgets');
                 let allWidgets = res.data;
                 if (localStorage.getItem('token')) {
                     try {
-                        const userRes = await api.get('/user/widgets');
+                        const userRes = await apiClient.get('/user/widgets');
                         const userMap = {};
                         userRes.data.forEach(uw => {
                             if (uw.widgetId) userMap[uw.widgetId._id] = uw.status;
@@ -51,7 +51,7 @@ const Widgets = () => {
 
     const handleEnable = async (widget) => {
         try {
-            await api.post(`/widgets/${widget._id}/enable`);
+            await apiClient.post(`/widgets/${widget._id}/enable`);
             setWidgets(prev => prev.map(w => w._id === widget._id ? { ...w, userStatus: 'Enabled' } : w));
             setConfirmModal({
                 isOpen: true,
@@ -84,7 +84,7 @@ const Widgets = () => {
 
     const handleDisable = async (widget) => {
         try {
-            await api.post(`/widgets/${widget._id}/disable`);
+            await apiClient.post(`/widgets/${widget._id}/disable`);
             setWidgets(prev => prev.map(w => w._id === widget._id ? { ...w, userStatus: 'Disabled' } : w));
         } catch (error) { console.error(error); }
     };
