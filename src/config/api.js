@@ -10,10 +10,10 @@ const LOCAL_API_URL = "http://localhost:5000";
 
 // Select which backend to use
 // Production:
-// const API_BASE_URL = PRODUCTION_API_URL;
+const API_BASE_URL = PRODUCTION_API_URL;
 
 // For local development, comment the above line and uncomment this:
-const API_BASE_URL = LOCAL_API_URL;
+// const API_BASE_URL = LOCAL_API_URL;
 
 
 // ===============================
