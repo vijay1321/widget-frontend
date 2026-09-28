@@ -2,18 +2,10 @@
 // API CONFIGURATION
 // ===============================
 
-// Production backend
-const PRODUCTION_API_URL = "https://widget-backend-1-l4lw.onrender.com";
+const BASE_URL = "https://widget-backend-1-l4lw.onrender.com";
 
-// Local backend
-const LOCAL_API_URL = "http://localhost:5000";
-
-// Select which backend to use
-// Production:
-const API_BASE_URL = PRODUCTION_API_URL;
-
-// For local development, comment the above line and uncomment this:
-// const API_BASE_URL = LOCAL_API_URL;
+// For local development only:
+// const BASE_URL = "http://localhost:5000";
 
 
 // ===============================
@@ -26,6 +18,6 @@ const WINDOWS_DOWNLOAD_URL =
 
 
 export {
-  API_BASE_URL,
+  BASE_URL,
   WINDOWS_DOWNLOAD_URL
 };
